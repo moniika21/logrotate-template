@@ -10,23 +10,23 @@ Specific rules are stored in the `/etc/logrotate.d` folder.
 
 For each file, they are attributes who define how logrorate will behave.
 
-- Log files are rotated once each weekday or each month
+- Log files are rotated count times before being removed or mailed
+
+```text
+rotate <count>
+```
+
+- Log files are rotated once each weekday
   - 0 means Sunday, 1 means Monday, ..., 6 means Saturday
 
 ```text
 weekly <0-6>
 ```
 
-- Log files can be also rotated once each month
+- Log files are rotated once each month
 
 ```text
 monthly
-```
-
-- Log files are rotated count times before being removed or mailed
-
-```text
-rotate <count>
 ```
 
 - Old versions of log files are compressed
@@ -70,6 +70,12 @@ file.
 ```text
 create <mode> <owner> <group>
 ```
+
+## Docker logrotate
+
+Each docker image creator have is own approach, you'll maybe have to logrotate yourself the generated logs.
+
+Or like [nginx-proxy-manager](https://github.com/NginxProxyManager/nginx-proxy-manager/blob/develop/docker/rootfs/etc/logrotate.d/nginx-proxy-manager) it may be done automatically.
 
 ## My approach
 

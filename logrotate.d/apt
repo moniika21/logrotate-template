@@ -1,0 +1,19 @@
+# /etc/logrotate.d/apt
+
+/var/log/apt/term.log {
+  rotate 12
+  monthly
+  compress
+  delaycompress
+  notifempty
+  missingok
+}
+
+/var/log/apt/history.log {
+  rotate 12
+  monthly
+  compress
+  delaycompress
+  notifempty
+  missingok
+}
