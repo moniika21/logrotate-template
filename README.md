@@ -81,6 +81,6 @@ Or like [nginx-proxy-manager](https://github.com/NginxProxyManager/nginx-proxy-m
 
 This is my logrotate approach on my server:
 
-- logrotate of all log files -> Monday
+- logrotate of all log files -> Saturday
 
 It must keep one month of archived logs for each service
